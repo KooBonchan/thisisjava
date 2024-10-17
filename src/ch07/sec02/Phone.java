@@ -3,6 +3,9 @@ package ch07.sec02;
 class Phone {
   String model;
   String color;
+  Phone(){
+    this("Redd Herring", "Black");
+  }
   Phone(String model, String color){
     this.model = model;
     this.color = color;
