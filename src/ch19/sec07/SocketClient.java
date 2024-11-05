@@ -78,6 +78,7 @@ public class SocketClient {
   }
   public void close(){
     try{
+      chatServer.sendToAll(this, clientName + " Left the room");
       socket.close();
     }catch(IOException ignored){}
 

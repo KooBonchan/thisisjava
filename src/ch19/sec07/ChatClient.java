@@ -39,7 +39,7 @@ public class ChatClient {
             String clientIp = json.getString("clientIp");
             String clientName = json.getString("chatName");
             String message = json.getString("message");
-            System.out.printf("%s@%s: \n" + message, clientName, clientIp);
+            System.out.printf("%s@%s: %s\n", clientName, clientIp, message);
           } catch (JSONException e) {
             System.out.println(e.getMessage());
             System.out.println("[Client] Data format not matching");
