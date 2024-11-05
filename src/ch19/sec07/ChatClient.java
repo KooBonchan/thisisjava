@@ -36,11 +36,12 @@ public class ChatClient {
         while (true) {
           try {
             JSONObject json = new JSONObject(dataInputStream.readUTF());
-            String clientIP = json.getString("clientIP");
+            String clientIp = json.getString("clientIp");
             String clientName = json.getString("chatName");
             String message = json.getString("message");
-            System.out.printf("%s@%s: " + message, clientIP, clientName);
+            System.out.printf("%s@%s: \n" + message, clientName, clientIp);
           } catch (JSONException e) {
+            System.out.println(e.getMessage());
             System.out.println("[Client] Data format not matching");
           }
         }

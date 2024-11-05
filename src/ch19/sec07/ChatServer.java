@@ -40,8 +40,7 @@ public class ChatServer {
           // socket client constructor --> start thread to communicate
         }
       } catch (IOException e) {
-        //???
-        throw new RuntimeException(e);
+        System.out.println("Server closed");
       }
 
     });
@@ -98,7 +97,7 @@ public class ChatServer {
         Enter Q or q to close server
         ----------------------------
         """);
-      while(scanner.nextLine().equalsIgnoreCase("q"));
+      while(!scanner.nextLine().equalsIgnoreCase("q"));
       scanner.close();
       chatServer.stop();
     }catch(IOException e){

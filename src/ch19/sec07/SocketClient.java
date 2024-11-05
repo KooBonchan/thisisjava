@@ -27,9 +27,9 @@ public class SocketClient {
 
   public SocketClient(ChatServer chatServer, Socket socket){
     try{
+      this.clientIp = socket.getInetAddress().toString();
       this.chatServer = chatServer;
       this.socket = socket;
-
       this.dataInputStream = new DataInputStream(socket.getInputStream());
       this.dataOutputStream = new DataOutputStream(socket.getOutputStream());
       receive();
@@ -62,7 +62,7 @@ public class SocketClient {
           }
         }
       } catch(IOException e){
-        System.out.println("[Server] Cliend disconnected: " + clientName);
+        System.out.println("[Server] Client disconnected: " + clientName);
         chatServer.removeSocketClient(this);
       }
 
